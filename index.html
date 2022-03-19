@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0" />
+  <!-- 禁止将数字转为号码 -->
+  <meta name="format-detection" content="telephone=no" />
+  <!-- 控制顶栏状态栏显示样式，可以为透明 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <title>实时更新：全国和本地新型肺炎疫情数据最新动态-由星芒云提供</title>
+  <meta property="og:title" content="实时更新：新型肺炎疫情最新动态">
+  <meta property="og:keyword" content="新型肺炎疫情最新动态,当前省份疫情数据,当前地区疫情数据">
+  <meta property="og:description" content="本页面由星芒云网络工作室实现，使用的是腾讯数据，第一时间同步全国新型肺炎疫情动态。">
+  <!-- 移动端页面开发 -->
+  <script>
+    var w = document.documentElement.getBoundingClientRect().width;
+    //7.5是根据设计图的大小除以100，需要按照你的实际设计图换算
+    var bili = w / 7.5;
+    document.documentElement.style.fontSize = bili + "px";
+  </script>
+  <!-- 网站图标 -->
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <!-- 重置样式 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- 本页样式 -->
+  <link rel="stylesheet" href="css/index.css">
+  <!-- 弹出层样式 -->
+  <link rel="stylesheet" href="js/layer_mobile/need/layer.css">
+  <!-- 在线JQ库 -->
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- 百度地图API -->
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=YhgdX9V4DTAIepL8XHcMFkVYEvd4zzkv"></script>
+  <!-- layer JS -->
+  <script type="text/javascript" src="js/layer_mobile/layer.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=zLf5D9RFnyylPN08pXzE1jMktuzz0hFu"></script>
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0515664820cfc2656ae448f4fefed829";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+
+<body>
+  <!-- 这里写你的代码 -->
+  <!-- html结构-copy -->
+  <!-- 网页内容 -->
+  <!-- 顶部 -->
+  <div id="wx_logo" style="margin:0 auto;display:none;">
+    <img src="img/wx.jpg">
+  </div>
+  <!-- 主体 -->
+  <div id="container">
+    <div class="head">
+    </div>
+    <div class="timeNum clearfix">更新时间&nbsp;<span class="d">----</span><span class="fr">数据来源：<a
+          href="https://news.qq.com/">腾讯新闻</a></span></div>
+    <!-- <h4>* 以下为全国数据：</h4> -->
+    <div class="recentNumber chinaData">
+      <div class="icbar confirm">
+        <div class="add">较昨日<span class="red a11">-</span></div>
+        <div class="number a1">-</div>
+        <div class="text ">全国确诊</div>
+      </div>
+      <div class="icbar suspect">
+        <div class="add ">较昨日<span class="orange a22">-</span></div>
+        <div class="number a2">-</div>
+        <div class="text">疑似病例</div>
+      </div>
+      <div class="icbar cure">
+        <div class="add ">较昨日<span class="green a33">-</span></div>
+        <div class="number a3">-</div>
+        <div class="text">治愈人数</div>
+      </div>
+      <div class="icbar dead">
+        <div class="add ">较昨日<span class="gray a44">-</span></div>
+        <div class="number a4">-</div>
+        <div class="text">死亡人数</div>
+      </div>
+    </div>
+    <!-- <h4>* 以下为您所在地数据：</h4> -->
+    <div class="recentNumber cityData">
+      <div class="icbar confirm">
+        <div class="add">较昨日<span class="red b111">-</span></div>
+        <div class="number b1">-</div>
+        <div class="text"><span class="b11">--</span>确诊</div>
+      </div>
+      <div class="icbar confirm">
+        <div class="add">较昨日<span class="red b222">-</span></div>
+        <div class="number b2">-</div>
+        <div class="text"><span class="b22">--</span>确诊</div>
+      </div>
+      <div class="icbar cure">
+        <div class="add ">治愈率<span class="green b333">-</span></div>
+        <div class="number b3">-</div>
+        <div class="text"><span class="b22">--</span>治愈人数</div>
+      </div>
+      <div class="icbar dead">
+        <div class="add">病死率<span class="gray b444">-</span></div>
+        <div class="number b4">-</div>
+        <div class="text"><span class="b22">--</span>死亡人数</div>
+      </div>
+    </div>
+    <!-- <h4>* 以下为全国各省份数据：</h4> -->
+    <div class="recentNumber provinceData">
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th>省份</th>
+            <th>确诊</th>
+            <th>治愈</th>
+            <th>死亡</th>
+          </tr>
+        </thead>
+        <tbody class="tbody" id="tbd">
+          <tr>
+            <td>香港</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 底部信息 -->
+    <div class="notice txj">
+      <p>
+        注意：不传谣不造谣。为了您的健康，请尽量不出门，出门一定要佩戴医用外科口罩，有颜色面一律朝外，压紧鼻翼处，口罩不可重复使用，用完剪掉并扔到专用垃圾箱，使用洗手液彻底清洁双手。
+      </p>
+      <p>会自动根据您当前位置推送疫情信息，欢迎收藏转发！如果您的位置不准确，请添加<a id="qq" href="https://qm.qq.com/cgi-bin/qm/qr?k=vmCrQfZ4k4udrtY5wKDkOMgYz2ICoycV&noverify=0">QQ</a>反馈。谢谢！
+      </p>
+      <p>
+        本页面由<a href="https://www.star-search.cn/old/ourselves/index.html" target="_blank">星芒云网络工作室</a>提供
+        <p>© 2022 by 星芒云. All rights reserved.</p>
+      </p>
+    </div>
+  </div>
+  <div id="allmap"></div>
+  <script>
+    //这里写你的JS代码
+    //数据地址：
+    // 1、数据地址1
+    // https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5&callback=jQuery3410994497906717867_1580475331590
+    // 主要用1即可。
+    // 
+    // 2、数据地址2
+    // https://view.inews.qq.com/g2/getOnsInfo?name=disease_other&callback=jQuery3410994497906717867_1580475331590
+    // 数据地址2是用来修复的，可选
+    // 注意：使用JSONP
+    $.ajax({
+      //默认是get，所以可以省略，等价于open()
+      type: "get",
+      //等价于open()
+      url: "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5",
+      dataType: "jsonp",
+      success: function (res) {
+        //写如何解析json的代码
+        var json = JSON.parse(res.data);
+        // 最新的更新时间
+        $(".d").text(json.lastUpdateTime);
+        // 全国新增
+        $(".a1").text(json.chinaTotal.confirm);
+        $(".a2").text(json.chinaTotal.suspect);
+        $(".a3").text(json.chinaTotal.heal);
+        $(".a4").text(json.chinaTotal.dead);
+        $(".a11").text(add(json.chinaAdd.confirm));
+        $(".a22").text(add(json.chinaAdd.suspect));
+        $(".a33").text(add(json.chinaAdd.heal));
+        $(".a44").text(add(json.chinaAdd.dead));
+        // 本地更新
+        var that = this;
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(116.331398, 39.897445);
+        map.centerAndZoom(point, 12);
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function (r) {
+          if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var aaa = r.address.province
+            var province = aaa.slice(0, aaa.length - 1)
+            var bbb = r.address.city
+            var city = bbb.slice(0, bbb.length - 1)
+            // 显示定位对应的省市
+            $(".b11").text(province)
+            $(".b22").text(city)
+            // 省市数据
+            var area = json.areaTree;
+            var children = area[0].children
+            for (var i = 0; i < children.length; i++) {
+              if (children[i].name == province) {
+                $(".b1").text(children[i].total.confirm);
+                $(".b111").text(add(children[i].today.confirm));
+                // 确定市区
+                var ccc = children[i].children;
+                for (var i = 0; i < ccc.length; i++) {
+                  if (ccc[i].name == city) {
+                    $(".b2").text(ccc[i].total.confirm);
+                    $(".b222").text(add(ccc[i].today.confirm));
+                    $(".b3").text(ccc[i].total.heal);
+                    $(".b333").text(ccc[i].total.healRate + "%");
+                    $(".b4").text(ccc[i].total.dead);
+                    $(".b444").text(ccc[i].total.deadRate + "%");
+                    return;
+                  }
+                }
+              }
+            }
+          } else {
+            alert('failed' + this.getStatus());
+          }
+        })
+        // 省份更新
+        var html = ""
+        var area = json.areaTree;
+        var children = area[0].children
+        for (var i = 0; i < children.length; i++) {
+          html += `<tr>
+            <td>${children[i].name}</td>
+            <td>${children[i].total.confirm}</td>
+            <td>${children[i].total.heal}</td>
+            <td>${children[i].total.dead}</td>
+          </tr>`;
+        }
+        $("#tbd").html(html)
+      },
+      //原来的JS是没有的，除非写else语句，可选
+      error: function (err) {
+        alert("数据获取失败，请稍后再试！")
+      }
+    })
+    function add(num) { 
+      return num >= 0 ? "+" + num : num;
+    }
+  </script>
+</body>
+
+</html>

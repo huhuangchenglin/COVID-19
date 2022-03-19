@@ -1,0 +1,10 @@
+1、数据地址1
+https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5&callback=jQuery3410994497906717867_1580475331590
+主要用1即可。
+
+ 2、数据地址2
+https://view.inews.qq.com/g2/getOnsInfo?name=disease_other&callback=jQuery3410994497906717867_1580475331590
+数据地址2是用来修复的，可选
+
+注意：使用JSONP
+
