@@ -1,0 +1,276 @@
+body {
+    font-size: 0.32rem;
+}
+
+.head {
+    width: 100%;
+    height: 3.34rem;
+    background: url(../img/top_headv2.png) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.timeNum {
+    padding: 0 0.4rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.24rem;
+    color: #222222;
+    position: relative;
+    overflow: hidden;
+}
+
+/*数据*/
+.recentNumber {
+    padding: 0.2rem 0.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed #ddd;
+    overflow: hidden;
+    /* 增加标题 */
+    position: relative;
+    padding-top: 0.7rem;
+}
+.chinaData:before {
+    content: "* 以下为全国各省份数据:";
+    position: absolute;
+    top: 0.2rem;
+    font-size: 0.24rem;
+    color: #666;
+    left: 0.4rem;
+}
+.recentNumber .add {
+    padding-top: 0.12rem;
+    color: #7C7C7C;
+    font-size: 0.2rem;
+    font-weight: 500;
+}
+
+.recentNumber .icbar {
+    flex: 1;
+    text-align: center;
+    margin-right: 2px;
+}
+
+.recentNumber .icbar .number {
+    font-size: 0.44rem;
+    color: #d81d1b;
+    font-weight: bold;
+}
+
+.recentNumber .icbar .text {
+    font-size: 0.24rem;
+    color: #222;
+    font-weight: bold;
+    height: 0.38rem;
+    line-height: 0.38rem;
+    overflow: hidden;
+}
+
+.recentNumber .icbar.confirm .number {
+    color: #d81d1b;
+}
+
+.recentNumber .icbar.suspect .number {
+    color: #f7ab1a;
+}
+
+.recentNumber .icbar.cure .number {
+    color: #178b50;
+}
+
+.recentNumber .icbar.dead .number {
+    color: #66666c;
+}
+
+.notice {
+    margin: 0.2rem;
+    background-color: #f8f8f8;
+    padding: 0.2rem;
+    border-radius: 10px;
+    font-size: 0.24rem;
+    color: #888
+}
+
+.notice p {
+    margin-bottom: 0.2rem;
+}
+
+/*所在地数据*/
+.cityData {
+    padding-top: 0.7rem;
+    position: relative;
+}
+
+.cityData:before {
+    content: "* 以下为您当前所在地数据:";
+    position: absolute;
+    top: 0.2rem;
+    font-size: 0.24rem;
+    color: #666;
+    left: 0.4rem;
+}
+
+.recentNumber .icbar:first-child:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.recentNumber .icbar:first-child,
+.recentNumber .icbar:first-child .text {
+    border-radius: 0 0 0 12px;
+}
+
+.recentNumber .icbar:last-child:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.recentNumber .icbar:last-child,
+.recentNumber .icbar:last-child .text {
+    border-radius: 0 0 12px 0;
+}
+
+.confirm {
+    background-color: #FDF1F1;
+}
+
+.confirm .text {
+    background-color: #FFE0E0;
+}
+
+.suspect {
+    background-color: #FFF7ED;
+}
+
+.suspect .text {
+    background-color: #FFEED9;
+}
+
+.cure {
+    background-color: #F1F8F4;
+}
+
+.cure .text {
+    background-color: #DFEEE6;
+}
+
+.dead {
+    background-color: #F8F8F8;
+}
+
+.dead .text {
+    background-color: #EEE;
+}
+/* 全国各省份数据 */
+.provinceData {
+    padding-top: 0.7rem;
+    position: relative;
+}
+
+.provinceData:before {
+    content: "* 以下为全国各省份数据:";
+    position: absolute;
+    top: 0.2rem;
+    font-size: 0.24rem;
+    color: #666;
+    left: 0.4rem;
+}
+.table{
+    width: 100%;
+    font-size: 0.24rem;
+    color: #222;
+    height: 0.38rem;
+    line-height: 0.38rem;
+    overflow: hidden;
+    text-align: center;
+}
+.thead th,.tbody td{
+    border: #eee solid 1px;
+}
+.thead tr th:nth-child(1),.tbody tr td:nth-child(1){
+    background-color: #fff7ed;
+    border-right: none;
+}
+.thead tr th:nth-child(2),.tbody tr td:nth-child(2){
+    background-color:#FDF1F1;
+    border-right: none;
+    border-left: none;
+}
+.thead tr th:nth-child(3),.tbody tr td:nth-child(3){
+    background-color: #f1f8f4;
+    border-right: none;
+    border-left: none;
+}
+.thead tr th:nth-child(4),.tbody tr td:nth-child(4){
+    background-color: #f8f8f8;
+    border-left: none;
+}
+/*分享按钮*/
+.share {
+    position: absolute;
+    top: 0.15rem;
+    right: 0.15rem;
+    width: 1.2rem;
+    z-index: 9;
+}
+
+.share img {
+    width: 100%
+}
+
+#mask {
+    display: none;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .66);
+}
+
+.blur {
+    filter: blur(3px);
+}
+
+.array {
+    background: url(../img/arr.png) right top no-repeat;
+    background-size: cover;
+    width: 1rem;
+    height: 1.25rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.3rem;
+}
+
+.info {
+    color: #fff;
+    border: 0.05rem dashed #fff;
+    border-radius: 0.2rem;
+    position: absolute;
+    top: 1.7rem;
+    left: 5%;
+    width: 90%;
+    padding: 0.15rem 0.2rem;
+    font-size: 0.30rem;
+    background-color: rgba(7, 32, 152, 0.8);
+    z-index: 99;
+}
+
+.info h4 {
+    font-size: 0.32rem;
+    margin-bottom: 0.1rem;
+}
+
+.info>div {
+    float: left;
+    width: 65%
+}
+
+.info img {
+    float: right;
+    margin-left: 0.1rem;
+    width: 30%;
+}
